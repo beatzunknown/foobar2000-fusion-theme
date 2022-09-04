@@ -1,0 +1,557 @@
+UI Hacks
+Component for foobar2000 v1.1-1.2
+Assembly from 2013-02-19
+=============================
+The component allows you to change the behavior of the main window of the player and the reaction to
+some user actions. Component settings can be found on the pages.
+"Display \ Notification Area", "Display \ Default User Interface \ Advanced", "Tools
+\ UI Hacks \ * "and" Display \ Main Window "in the foobar2000 configuration window.
+
+
+Description of settings
+=================
+Display \ Main Window page (most options with FUI do not work):
+
+ [Frame style]
+ Allows you to change the appearance of the frame of the main window:
+  Default - standard frame with title.
+  Small caption - the caption is reduced in size.
+  No caption - the header is completely removed.
+  No border - the frame (including the title) is completely removed.
+
+ [Pseudo-caption]
+ Allows you to specify the coordinates of the rectangle within the main window, which
+ can be used to move it when the header is hidden.
+ The first two parameters, if positive, set the position of the rectangle.
+ relative to the upper left corner of the window, and if negative, then relatively
+ lower right. The other two parameters, if they are positive, set the width and
+ the height of the rectangle, and if negative, the position of the lower right corner
+ rectangle relative to the lower right corner of the window.
+
+ [Move with]
+ Sets the way to move the player window:
+  Caption only - just grabbing the window for the title with the mouse (that is, as usual).
+  Middle mouse button - middle mouse button.
+  Alt + Ctrl & Left mouse button - left mouse button while pressing Alt and Ctrl.
+  Any method - in any way described above.
+
+ [Esc key function]
+ Sets the action performed when pressing the Esc key:
+  None - no action (default behavior).
+  Hide - minimize the main player window.
+  Exit - shutdown of the player.
+ Unlike assigning the Esc key of the desired action in the "Keyboard Shortcuts",
+ This option does not interfere with the closing of Esc child windows and drop-down lists.
+
+ [Minimize on close]
+ Controls the behavior of the player when you press Alt + F4 or the "Close" button:
+ Disable - the player is closed (default behavior).
+ Enable - the player is minimized (you can close the player through the menu File \ Exit). 
+ Enable and prevent minimize to tray - differs from the previous version of topics
+ that minimizing to tray will only happen when trying to close the player,
+ but not when folding it.
+ Attention! The last option is available only after the "Minimize
+           to notification area "(DUI) or" Minimise to icon "(CUI). 
+
+ [Hide taskbar icon]
+ Removes the player icon from the Taskbar.
+
+ [Stick to the edges]
+ Causes the player window to "stick" to the edges of the screen while dragging. Also for
+ the main window is forced to turn on the mode "Display the contents of the window when
+ dragging and dropping. "
+  [Stick distance] - sticky distance in pixels (1-100).
+  [Unstick distance] - the distance to stick off in pixels (1-100).
+ Work on systems with several monitors is possible.
+
+ [Custom icon]
+ When this option is enabled, the header of the main player window and the taskbar will be
+ display a custom icon instead of the standard one.
+
+ [Auto hide]
+ Minimizes the player window N seconds after it has become inactive.
+ The delay time can take values ​​from 1 to 60 seconds.
+
+
+ [Invert menu <Shift> behavior]
+ Inverts the action of the Shift key when working with the menu. If the option is enabled, and
+ Shift is not pressed, the menu (main and contextual) will be shown in full
+ option, and if pressed, then in the usual.
+
+ [Main menu as system menu]
+ If this option is enabled, then when you click on the icon in the upper left corner of the main
+ windows instead of the system menu will be shown the main menu of the player. Right click
+ button equates to pressed Shift-y.
+
+
+ [Disable window sizing]
+ When enabled, the resizing of the main window becomes impossible.
+
+ [Disable window maximization]
+ Allows you to block the possibility of opening the main window to full screen.
+
+ [Minimum size]
+ Allows you to set a limit on the minimum size of the main window.
+  [] - The minimum width of the window in pixels.
+  [] - The minimum height of the window in pixels.
+
+ [Maximum size]
+ Allows you to set a limit on the maximum size of the main window.
+  [] - The maximum width of the window in pixels.
+  [] - Maximum window height in pixels.
+
+  [<] - Copies the current window size into the appropriate fields.
+  Dimensions are set on the inner edge of the window, that is, without taking into account the width of the borders
+  and header heights.
+
+
+ [Aero effects]
+ Allows you to control Aero effects for the main window:
+  Default - resets all effects to the default state.
+  Disable - completely disables the glass effect on the window frame.
+  Glass frame - expands the effect of glass inside the window.
+  Sheet of glass - expands the effect of glass on the whole window.
+
+ [Alpha transparency]
+ Allows the use of alpha-based translucency.
+ Not all components (including standard ones) support operation in this mode.
+
+   [] - The degree of expansion of the glass effect on top (in pixels).
+ [] [] - Left and right.
+   [] - Below.
+
+ Attention! The function works only in Vista and Windows 7 and only when enabled
+           Aero mode, which is not available in all editions of Windows.
+
+Display \ Notification Area page:
+
+ [Play / Pause on middle button click]
+ When you click the middle mouse button (wheel) on the tray icon it will be executed
+ "Play or Pause" command.
+
+ [Disable hiding on left button click]
+ When the option is on, clicking on the tray icon will not hide the player window, and
+ will always activate it.
+
+ [Enable back / forward mouse buttons]
+ When this option is enabled, click the additional mouse buttons (available only on
+ five-button mice) on the tray icon will lead to the transition to the next or
+ previous track
+
+ [Use playback status icons]
+ When this option is enabled, the icon displayed in the tray will change depending on
+ from play mode.
+  [Play icon] - file with the icon displayed when playing a track.
+  [Pause icon] - the file with the icon displayed when the track is paused.
+  [Stop icon] - the file with the icon displayed when the player is completely stopped.
+
+ [Disable balloons when player is active]
+ Show notifications only if the player window is inactive (for example,
+ collapsed).
+
+ [Now playing balloon]
+ The “Now playing” notification control that appears when you change a track or
+ Press the hot key configured on the "View \ Show Now Playing" command.
+ Possible values:
+  Default - default behavior: notification appears and then disappears.
+  after about 10 seconds of activity (mouse work or keyboard input)
+  user                                           
+  Disable - this type of notification is completely blocked.
+  Hide after Ns - a notification appears and then disappears after N seconds.
+  regardless of user activity.
+
+ [Paused balloon]
+ Manage the notification "Paused", appearing at the time of pausing.
+
+ [Unpaused balloon]
+ Manage "Unpaused" notification that appears after taking off the pause.
+
+ [Volume adjustment balloon]
+ The "Volume adjustment" notification control that appears for any
+ change the volume in the player. This notification is missing in Columns UI.
+
+Display \ Default User Interface \ Advanced page:
+
+ [Main menu bar]
+ Controls the visibility of the panel with the main menu:
+   Show - the menu is visible (default behavior).
+   Hide - menu is hidden. If all other panels are also hidden, then the area with
+          panels (Rebar) will be completely removed and you can return it back 
+          just by changing this option.
+   Show when pressing Alt key - the menu is hidden, but becomes visible when pressed
+                                Alt keys.
+
+ [Status bar]
+ Controls the visibility of the status bar at the bottom of the main window:
+   Show - the status bar is visible (default behavior).
+   Hide - the status bar is hidden.
+
+ [Enable MRU filter list]
+ Changes the Album List interface (foo_albumlist), adding the ability to save
+ entered search queries for later quick access to them.
+
+The following options work only with the standard Playlist View:
+
+ [Use custom icons]
+ When this option is enabled, custom icons will be displayed in the playlist.
+ instead of the standard ones.
+  [Play icon] - file with the icon displayed when playing a track.
+  [Pause icon] - the file with the icon displayed when the track is paused.
+ Icons should contain 16x16 and 20x20 images.
+
+ [Middle button click action]
+ Sets the action performed when clicking in the playlist with the middle mouse button:
+   None - switch to playlist scroll mode (default behavior).
+   Add to playback queue - add a track under the cursor to
+                           play queue.
+   Preferences - opens the properties window for selected tracks (when enabled
+                 the options "Display \ Prefer currently playing track" it can be
+                 not selected tracks, but only one playable track).
+ In addition to the standard Playlist View, this option works with SimPlaylist.
+                 
+ [Title formatting colors]
+ Allows you to change the additional colors specified with the> and <characters.
+ In addition to the standard Playlist View, this option works with SimPlaylist and Facets.
+
+Tools \ UI Hacks page:
+
+ [Autostart after Windows reboot]
+ If the option is activated and the system is shutting down (reboot, shutdown
+ computer, etc.) occurred when the player is running, then when resuming work
+ The system foobar2000 will start automatically.
+
+ [Block screensaver when player is active]
+ When the player is active, it blocks the screen saver and monitor auto-blanking.
+
+ [Pause on session lock]
+ Suspends playback at the time of the lock (Lock) computer.
+
+  [and resume after unlock]
+  And continues to play after unlocking.
+
+ [Pause on mute or when headphone jack unplugged]
+ Pauses playback when the system is muted.
+
+  [and resume after unmute]
+  And continues to play after switching on.
+
+ [Pause when headphone jack unplugged]
+ Pauses playback when headphones are disconnected.
+
+  [and resume when plugged back in]
+  And continues to play after connecting.
+
+ Attention! The function only works on Vista and Windows 7/8 and only if
+           appropriate support from the driver and audio card.
+
+ [Pause on telephone call]
+ Pauses playback at the beginning of a telephone conversation (for example,
+ when calling using Skype or Yahoo! Messenger).
+
+  [and resume after call end]
+  And continues to play after its completion.
+
+ Attention! The function works only in Windows 7/8 and only when the option is on.
+           "When using a computer to talk ..." which can be found
+           in the system settings ("Control Panel"> "Sound"> ​​"Communication").
+
+ [Write log to file *]
+ The parameter allows you to specify a file in which all messages from the
+ console window. Unlike files created using the "Write Log" it stores
+ all messages (including the time of their appearance) and is not cleared after the restart.
+ The file path is relative to the profile folder.
+
+ [Working set trimming]
+ The option allows you to control the cleaning of the working set when the player is minimized:
+  Default - the default (behavior depends on the operating system).
+  Enable - cleaning is enabled.
+  Disable - clears off.
+ More information about the working set and the reasons for cleaning it can be found at:
+  http://foobar2000.org.ru/forum/viewtopic.php?f=12&t=3654
+
+ * - Changing this parameter requires restarting the player.
+
+The Tools \ UI Hacks \ Portability page:
+
+ When entering this page, you will be prompted to install it in the folder with the player.
+ A special DLL file is required for the following options. Please note that
+ to install it may require administrator privileges.
+
+ [Fonts folder *]
+ This parameter allows you to specify the path to the folder with fonts. All located in it
+ fonts will be downloaded during the player launch process and will be available in it, so
+ same as any other, except that they will not be installed in the system
+ and the work of other programs will not have any impact. If the folder will be
+ found the font already installed in the system, the font from the folder will have more
+ higher priority than the system priority (again, only within foobar2000).
+ The following fonts are supported: FON, FNT, TTF, TTC, OTF, PFM + PFB.
+ Please note that individual components only support TTF fonts.
+ The path is relative to the folder with foobar2000.exe.
+
+ [Assemblies folder *]
+ This parameter allows you to specify the path to the folder with assemblies. Embedded in dll files
+ as well as external assembly manifests located in this folder will be added as
+ dependencies in the default activation context that allows you to use COM
+ components (and not only) without prior registration (Reg-free COM).
+ Technology description: http://msdn.microsoft.com/ru-ru/library/ms973913.aspx
+ The path is relative to the folder with foobar2000.exe.
+ Attention! With both embedded and external manifest, preference
+           given to the outside; files with attributes "hidden" or "system"
+           are skipped.
+
+ [Substitute foobar folder as drive *]
+ Allows you to map the name of the disk folder with foobar2000.exe. The disc will be available
+ only within the player. This disc is convenient to use in portable mode.
+ with components not supporting relative paths.
+ If the selected name is already taken by one of the local drives, the mapping is not
+ produced.
+
+ [Disable "Error writing ..." messages]
+ Allows you to disable error messages for entries that appear during
+ closing the player in the absence of rights to write to the configuration files.
+
+ [Remove all startup restrictions *]
+ Disables a number of checks when the player starts up, allowing you to run it with Read Only
+ media (for example, from a CD-ROM), and also rename the file foobar2000.exe
+ and use beta versions for more than four weeks.
+
+ [Additional search paths *]
+ This parameter allows setting relative paths to different files, such as:
+  Console encoders for foo_converter and decoders for foo_input_exe.
+  Additional libraries (for example, for foo_ui_columns, foo_dumb, foo_midi).
+  Programs started with foo_run.
+ Paths are relative to the folder with foobar2000.exe.
+
+ * - Changing this parameter requires restarting the player.
+
+Advanced page:
+
+ [Display \ Default User Interface \ Main window branding]
+ This group of parameters allows you to replace the inscription "[foobar2000]" in the title
+ the main window, on your own.
+  [Enable]
+  Activates the function.
+  [Caption]
+  Title text.
+
+
+Menu commands
+============
+View \
+ Disable sizing - see the description of [Disable window sizing].
+
+ Disable maximization ** - see the description of [Disable window maximization].
+
+ Minimum size ** - see the description of [Minimum size].
+
+ Maximum size ** - see the description of [Maximum size].
+
+ Show or Hide caption * - hides or shows the title of the main window,
+                         see also the description of [Frame style].
+
+ Fullscreen - expands the player window to full screen. note that
+              neither "Disable sizing" nor "Disable maximization" have any effect 
+              to work this team.
+
+ Maximize or Restore - maximizes or restores the main window of the player.
+                        The command appears only when the header is hidden.
+
+ Hide menu bar * - see description of [Main menu bar].
+
+ Hide status bar * - see the description of [Status bar].
+
+ Popup Main Menu ** - shows under the mouse cursor a popup menu containing
+                     the same commands as the main menu.
+
+ Hide taskbar icon * - see the description of [Hide taskbar icon].
+
+ Switch to UI * - allows you to change the current interface module to another (without
+                 use the settings window).
+
+ Aero effects * - see the description of [Aero effects] and [Alpha transparency].
+
+ Highlight Now Playing ** - highlights the track being played.
+ 
+Playback \
+ Pause on Previous ** - goes to the previous track and immediately pauses.
+
+ Pause on Next ** - goes to the next track and immediately pauses.
+
+ Play Next Playlist * - goes to play the next playlist.
+
+ * - the command is visible only in the full version of the menu (that is, when you press Shift).
+ ** - the command is not displayed in the menu, but you can put a hot key on it
+     or customize the toolbar button.
+
+
+Other
+=============
+A command line key is available / forceforeground, which allows you to place
+The main player window to the forefront, regardless of the system settings.
+
+The component allows you to delete the current playlist by clicking the middle mouse button on
+"Playlist Switcher" (element of DUI-toolbar).
+
+In the standard font selection dialog, the Quality field has been added, enabling
+Font rendering quality changes (ClearType and others).
+
+The component allows, when displaying a menu, to simulate a mouse press of the Shift key.
+For the main menu, click the right mouse button and hold it to click on
+the desired menu. For the context menu, on the contrary, hold down the left one and click
+right.
+
+Added titleformatting variables:
+  % foobar2000% - contains the full path to the folder with foobar2000.exe.
+  % foobar2000profile% - contains the full path to the folder with the profile.
+Note that when installing in portable mode, both folders match.
+
+Added to the "Key" field on the "Keyboard Shortcuts" page in the configuration window
+context menu allows you to select previously inaccessible keys Tab, Esc and F1.
+
+The component implements a number of interfaces available from the "WSH Panel Mod" component.
+An example of use can be found in the UIHacks.js file, and the component itself on the site:
+http://code.google.com/p/foo-wsh-panel-mod/downloads/list
+
+
+Compatibility
+=============
+The component is fully compatible with UI components foo_ui_classic, foo_ui_columns,
+foo_ui_func, foo_ui_std and should work with all versions of the player, supporting
+SDK version 77 (currently it is from version 1.1.0.0 and up to 1.2.3.0).
+
+The component is written in Pascal, without using the foobar2000 SDK.
+
+
+Change history
+=================
+2009.05.27 The first stable version.
+2009.05.28 The first public version.
+2009.05.29 Added option "Hide after N seconds of inactivity".
+2009.06.05 Added options "Lock window size" and "Fullscreen mode".
+2009.06.06 Added the "Playback \ DSP Manager" menu command.
+2009.06.07 Added option "Disable hiding on tray click".
+2009.06.12 The option "Block maximize" is added.
+2009.06.18 Added option "Autorestart with Windows".
+2009.06.23 Added setting of playlist icons.
+2009.06.25 Added the option "No border".
+2009.07.01 Relative paths are now supported in icon settings.
+2009.07.02 To the option "No border" added options for moving the window.
+2009.07.03 Hide minimized window with "Hide taskbar icon" enabled.
+2009.07.20 Ban round in the Online Troubleshooter.
+2009.07.27 Added option "Block screensaver when player is active".
+2009.08.01 Added option "Pause on session lock".
+2009.08.03 The "Quality" field was added to the standard font settings dialog.
+2009.09.09 The menu command "Maximize / Restore" is added.
+2009.09.12 The option "Change volume using wheel on taskbar" is added.
+2009.09.19 The "Change volume ..." functionality is rendered into a separate component.
+2009.09.20 Added the functions necessary for the work of "TaskBar Gestures".
+2009.09.27 Added the / forceforeground command line parameter.
+2009.11.22 Added support for settings dialog in the style of foobar2000 v1.0
+           and the "Always show full menu" function. A number of menu items are deleted when
+           work in v1.0.
+2009.11.26 Improved compatibility with v1.0 and fixed work of the tray icon.
+2009.11.27 Compatibility with v1.0 beta 2a.
+2009.11.29 Added the parameter "Encoder folders" and the option "Hide on Esc".
+2009.12.01 The option "Hide taskbar icon" has been removed and is no longer supported.
+2009.12.04 Added the option "Main menu as system menu" and the command "Popup Main Menu".
+2009.12.05 Changed the behavior and the name of the option "Always show full menu".
+2009.12.18 Added the ability to display full menus using only the mouse.
+2009.12.19 Added options "Minimum size" and "Maximum size".
+2009.12.20 Fixed bugs and changed the behavior and name of some options.
+2009.12.23 Added option "Hide menu bar". Some options are regrouped.
+2009.12.26 The problem with component removal by the installer v1.0 beta 4 and higher has been solved.
+2010.01.10 Improved compatibility with v1.0.
+2010.01.22 Support for versions below 1.0.0.0 has been discontinued.
+2010.01.23 Added creation of "Maximized" and "Fullscreen" tag files.
+2010.01.24 Multiple changes and fixes in the work of the main window options.
+2010.01.25 "Hide taskbar icon" option restored (based on original
+           foo_notaskbar from G-Lite).
+2010.01.28 Added option "Hide statusbar".
+2010.02.20 Compatibility with 1.0.1 beta 1.
+2010.03.08 Compatibility with 1.0.1. Support build from vadimsva.
+2010.03.30 Added autoloading fonts.
+2010.04.05 Virtual disk support added (subst_drive_enabled).
+2010.04.06 Added option "Disable Error writing ... messages".
+2010.04.07 Advanced options are renamed and moved to the "UI Hacks" branch.
+2010.04.08 In the menu, added commands for changing the interface and output device.
+2010.04.11 Compatibility with 1.0.2 and 1.0.2.1.
+2010.04.13 The option "Working set trimming" is added.
+2010.04.19 The foo_converter bug fix (oggenc.exe; oggenc2.exe).
+2010.04.25 Added option "Middle button click action".
+2010.04.26 The settings page is radically changed.
+2010.04.27 Added support for FUI (options associated with the tray icon).
+2010.04.30 Compatibility with 1.0.3.
+2010.05.05 Added option "Enable back / forward mouse buttons".
+2010.05.13 Improved compatibility with FUI.
+2010.05.15 Added titleformatting-variable% foobar2000%.
+2010.05.20 The commands "Pause on Previous" and "Pause on Next" are added.
+2010.05.26 Playlist Switcher added closing the playlist with the middle button.
+2010.05.27 Support for CUI 0.3.8.6 (options associated with the tray icon).
+2010.05.28 Added commands "Minimum size" and "Maximum size".
+2010.05.29 Added the ability to change the add. flowers in DUI.
+2010.06.08 Improved work with file open / save dialogs in some
+           components (equalizer settings, themes, BMP, PNG, etc.).
+2010.06.10 Added option "Custom icon".
+2010.07.17 Compatibility with 1.1 beta 1.
+2010.07.19 Interface in the style of 1.1.
+2010.07.31 The ability to display the hidden menu by pressing Alt.
+2010.08.09 The options "Write log to file" and "Substitute foobar folder as drive" are added.
+2010.08.10 Minor changes to the new (1.1) interface and discontinuation of support for the old (1.0).
+2010.08.11 Removed parameters related to tag files.
+2010.08.12 Added option "Remove all startup restrictions".
+2010.08.14 Changing the settings interface.
+2010.08.16 Added hacks for foo_albumlist.
+2010.08.19 Minor changes during the installation of dsound.dll.
+2010.08.28 Added titleformatting-variable% foobar2000profile%.
+2010.08.29 Added the Advanced settings group "Main window rebranding".
+2010.08.30 Added the command "Disable maximization".
+2010.10.04 Minor changes in menu commands.
+2010.10.20 Compatibility with 1.1.1 beta 2.
+2010.11.06 Compatibility with 1.1.1.
+2010.11.07 Added the option "Pause on mute".
+2010.11.13 Added option "Pause on mute or when headphone jack unplugged".
+2010.12.05 Improved loading of the icon "Custom icon" and tray icons.
+2010.12.09 The third state is added to the option "Hide menu bar".
+2010.12.10 To combat flicker, the main window is hidden during the launch of the player.
+2010.12.15 Added autoloading assemblies.
+2010.12.26 Compatibility with 1.1.2 beta 1.
+2011.01.02 Compatibility with 1.1.2 beta 2.
+2011.01.03 Some of the settings are transferred to the "Portability" page and require the installation of a special-DLL.
+2011.01.09 Compatibility with 1.1.2 beta 3.
+2011.01.11 Added option "Use playback status icons".
+2011.01.14 Improved compatibility with Wine.
+2011.01.15 Compatibility with 1.1.2 beta 4.
+2011.01.22 Compatibility with 1.1.2.
+2011.01.23 Restored the ability to use Esc and Tab as hotkeys.
+2011.01.28 Expanded options for setting the "Pause on ..." options.
+2011.02.21 Compatibility with 1.1.3.
+2011.02.24 Compatibility with 1.1.4.
+2011.02.25 Extended functionality "Hide on <Esc>".
+2011.02.27 Compatibility with 1.1.5.
+2011.03.21 Compatibility with 1.1.6.
+2011.06.02 Support for versions lower than 1.1.0.0 has been discontinued.
+2011.08.16 The dependence on the player version is removed.
+2011.09.08 Added the ability to use F1 as a hot key.
+2011.11.09 Added the option "Pause on telephone call".
+2012.01.02 Support for foo_facets has been added to the option "Title formatting colors".
+2012.01.07 The special-DLL installation is reworked.
+2012.03.06 Changed the behavior of the options Minimum / Maximum size.
+2012.05.12 The bug fix foo_converter was removed, as outdated.
+2012.05.19 Added option "Aero Glass".
+2012.05.23 Added the ability to control a component from scripts.
+2012.05.31 The "Aero Glass" option has been expanded.
+2012.06.02 Added option "Pseudo-caption".
+2012.06.28 Changes and corrections in the work of the main window options.
+2012.06.30 Updated interfaces and examples of their use (UIHacks.js).
+2012.10.27 Changes in the "Frame style" and "Disable window sizing" options.
+2012.10.29 The option "Minimize on close" is expanded.           
+2012.10.30 SimPlaylist support.
+2012.10.31 Updated interfaces and examples of their use (UIHacks.js).
+2012.11.13 A slight change in the settings interface.
+2012.11.16 Interfaces and examples of their use were updated (UIHacks.js).
+2012.11.26 The information about the components is added to the header of the settings window.
+2012.11.29 Added support for foo_ui_classic.
+2012.12.17 Compatibility with 1.2.0 beta 1.
+2013.01.20 Updated interfaces and examples of their use (UIHacks.js).
+2013.01.29 Added command "Highlight Now Playing".
+2013.02.19 Added foo_out_wasapi.dll lock under XP.
