@@ -26,3 +26,7 @@ Currently there are 2 simple themes:
 * Old n Simple - so barebones it's almost like foobar2000 in its default state. But I've got a soft spot for it since it was my first attempt at customisation many years ago.
 
 * Daily Driver - what I use now. It's got everything I need: playlist window, album art, library window, lyrics, waveform seekbar, spectrogram and playback queue.
+
+## Example
+
+![daily_driver_example](https://raw.githubusercontent.com/beatzunknown/foobar2000-fusion-theme/refs/heads/main/example.png)
