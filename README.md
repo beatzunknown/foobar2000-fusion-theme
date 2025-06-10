@@ -29,4 +29,8 @@ Currently there are 2 simple themes:
 
 ## Example
 
+### Fusion
+![daily_driver_example](https://raw.githubusercontent.com/beatzunknown/foobar2000-fusion-theme/refs/heads/main/example2.png)
+
+### Daily Driver
 ![daily_driver_example](https://raw.githubusercontent.com/beatzunknown/foobar2000-fusion-theme/refs/heads/main/example.png)
